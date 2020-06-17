@@ -29,15 +29,15 @@
     - name: Enable & Starting MySQL Service.
       systemd: name=mysqld state=started enabled=true   
 
-    # - name: Update mysql root user password.
-    #   mysql_user:
-    #     login_user: root
-    #     login_password: ""
-    #     name: root
-    #     password: root
-    #     check_implicit_admin: yes
-    #     priv: '*.*:ALL,GRANT'
-    #     state: present
+    - name: Update mysql root user password.
+      mysql_user:
+        login_user: root
+        login_password: ""
+        name: root
+        password: root
+        check_implicit_admin: yes
+        priv: '*.*:ALL,GRANT'
+        state: present
 
     - name: Create mysql user.
       mysql_user:
