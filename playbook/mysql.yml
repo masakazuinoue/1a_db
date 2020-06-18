@@ -4,9 +4,6 @@
   vars:
     config_path: '/vagrant'
   tasks:
-    - name: Update dnf repository.
-      dnf: name=* state=latest
-
     - name: Install dnf packages.
       dnf:
         name:
